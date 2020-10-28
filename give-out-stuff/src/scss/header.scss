@@ -1,0 +1,50 @@
+.header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    min-height:100vh;
+    text-align: center;
+    position: relative;
+    &__title {
+        min-width: 50%;
+        font: normal normal normal 30px/55px Open Sans;
+        color: #3C3C3C;
+        font-size: 30px;
+        margin-right: 5%;
+        &__decor {
+            margin-top: 15px;
+            width: 100%;
+            min-height: 20px;
+            background: transparent url('../assets/Decoration.svg') no-repeat center/contain;
+        }
+    }
+    &__navigation {
+        min-width: 50%;
+        margin-top: 15px;
+        margin-right: 5%;
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li{
+                width:150px;
+                border: 0.75px solid #3C3C3C;
+                padding: 10px 15px;
+                margin:10px;
+
+            }
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: -100px;
+        left: -400px;
+        width: 900px;
+        height: 700px;
+        z-index: -1;
+        background: transparent url('../assets/Home-Hero-Image.jpg') no-repeat center/contain;
+    }
+}
