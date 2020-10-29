@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+import MenuToScroll from "./MenuToScroll";
 const Navigation = () => {
   return (
     <div className="navbar">
@@ -15,13 +17,10 @@ const Navigation = () => {
       </div>
       <div className="navbar__menu">
         <ul>
-          <li>
+          <li className="navbar__menu__start">
             <Link to="/">Start</Link>
           </li>
-          <li>O co chodzi?</li>
-          <li>O nas</li>
-          <li>Fundacja i organizacje</li>
-          <li>Kontakt</li>
+          <MenuToScroll />
         </ul>
       </div>
     </div>
