@@ -8,7 +8,7 @@ const MenuToScroll = () => {
     <>
       <li>
         <Link
-          //   onClick={scrollToBot}
+          className="link"
           to="whatAbout"
           spy={true}
           smooth={true}
@@ -18,13 +18,34 @@ const MenuToScroll = () => {
           O co chodzi?
         </Link>
       </li>
-      <Link to="aboutUs" spy={true} smooth={true} offset={-70} duration={500}>
+      <Link
+        className="link"
+        to="aboutUs"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      >
         <li>O nas</li>
       </Link>
-      <Link to="helpWho" spy={true} smooth={true} offset={-70} duration={500}>
+      <Link
+        className="link"
+        to="helpWho"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      >
         <li>Fundacja i organizacje</li>
       </Link>
-      <Link to="contact" spy={true} smooth={true} offset={-70} duration={500}>
+      <Link
+        className="link"
+        to="contact"
+        spy={true}
+        smooth={true}
+        offset={-70}
+        duration={500}
+      >
         <li>Kontakt</li>
       </Link>
     </>
