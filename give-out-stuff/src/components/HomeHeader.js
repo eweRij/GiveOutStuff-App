@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const HomeHeader = () => {
   return (
-    <header className="header">
+    <header className="header container">
       <div className="header__title">
         <h1>Zacznij pomagać!</h1>
         <h1> Oddaj niechciane rzeczy w zaufane ręce</h1>

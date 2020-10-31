@@ -6,7 +6,7 @@ import Log from "./components/Log";
 import Registration from "./components/Registration";
 function App() {
   return (
-    <div className="app container">
+    <div className="app">
       <HashRouter>
         <Navigation />
         <Switch>
