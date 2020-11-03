@@ -1,5 +1,6 @@
 
 .numbers {
+    color: #3C3C3C;
     display: flex;
     width: 92%;
     padding: 8vh;
@@ -19,11 +20,14 @@
             margin-bottom: 5vh;
             font: normal normal normal 18px/30px Open Sans;
             letter-spacing: -0.32px;
+            opacity: 1;
+      
         }
         div {
             font: normal normal 300 14px Merriweather;
             letter-spacing: -0.32px;
             line-height: 1.5;
+            opacity: 1;
         }
 }
 

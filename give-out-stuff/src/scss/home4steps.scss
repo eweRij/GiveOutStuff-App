@@ -21,7 +21,6 @@
     &__content {
         background-color: #F0F1F1;
         width: 100%;
-        margin-bottom: 5vh;
         ul {
            
             display: flex;
@@ -65,7 +64,8 @@
     width:150px;
     border: 0.75px solid #3C3C3C;
     padding: 10px 15px;
-    margin:10px;
+    margin-top:5vh;
+    margin-bottom: 5vh;
     text-align: center;
     font-size: 28px;
     color:#3C3C3C;

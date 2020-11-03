@@ -8,7 +8,7 @@ const HomeThreeColumns = () => {
         <h2>ODDANYCH WORKÓW</h2>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim
-          a elit viverra elementuma. Aliquam erat volutpat.
+          a elit viverra elementuma.<br></br> Aliquam erat volutpat.
         </div>
       </div>
       <div className="organizations">
@@ -16,7 +16,7 @@ const HomeThreeColumns = () => {
         <h2>WSPARTYCH ORGANIZACJI</h2>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim
-          a elit viverra elementuma. Aliquam erat volutpat.
+          a elit viverra elementuma.<br></br> Aliquam erat volutpat.
         </div>
       </div>
       <div className="collections">
@@ -24,7 +24,7 @@ const HomeThreeColumns = () => {
         <h2>ZORGANIZOWANYCH ZBIÓREK</h2>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim
-          a elit viverra elementuma. Aliquam erat volutpat.
+          a elit viverra elementuma.<br></br> Aliquam erat volutpat.
         </div>
       </div>
     </section>
