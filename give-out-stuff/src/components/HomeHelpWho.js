@@ -6,6 +6,7 @@ const HomeHelp = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [perPage, setPerPage] = useState(3);
   const [pages, setPages] = useState([]);
+
   const API = "http://localhost:8000";
 
   const handleClick = (e) => {
@@ -25,13 +26,13 @@ const HomeHelp = () => {
           </li>
         );
       })
-    : "trwa ładowanie";
+    : "";
+  let page = [];
   const pagesLength = (list) => {
-    let page = [];
     for (let i = 1; i <= Math.ceil(list.length / perPage); i++) {
       page.push(i);
-      setPages(page);
     }
+    setPages(page);
   };
 
   const renderPageNumbers = pages.map((number) => {
@@ -47,8 +48,39 @@ const HomeHelp = () => {
       </li>
     );
   });
-  useEffect(() => {
+
+  const handleFoundations = () => {
+    setPages([]);
     fetch(`${API}/fundacje`)
+      .then((response) => response.json())
+      .then((data) => {
+        setClientList(data);
+        pagesLength(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setDescription("Opis dla Fundacji");
+  };
+
+  const handleOrganizations = () => {
+    setPages([]);
+    fetch(`${API}/organizacje`)
+      .then((response) => response.json())
+      .then((data) => {
+        setClientList(data);
+        pagesLength(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    setDescription("Opis dla Organizacji");
+    console.log(pages);
+  };
+
+  const handleCollections = () => {
+    setPages([]);
+    fetch(`${API}/zbiorki`)
       .then((response) => response.json())
       .then((data) => {
         setClientList(data);
@@ -56,21 +88,41 @@ const HomeHelp = () => {
       .catch((error) => {
         console.log(error);
       });
-    pagesLength(clientList);
+    setDescription("Opis dla Zbiórek");
+  };
+
+  useEffect(() => {
+    fetch(`${API}/organizacje`)
+      .then((response) => response.json())
+      .then((data) => {
+        setClientList(data);
+        pagesLength(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    setDescription("Opis dla Organizacji");
   }, []);
   return (
     <section className="helpWho">
       <h1 className="helpWho__heading">Komu pomagamy?</h1>
       <div className="helpWho__decor"></div>
       <ul className="helpWho__navigation">
-        {/* <li className={active_foundations}>Fundacjom</li>
-        <li className={active_organizations}>Organizacjom pozrządowym</li>
-        <li className={active_collections}>Lokalnym zbiórkom</li> */}
+        <li onClick={handleFoundations} className="active_foundations">
+          Fundacjom
+        </li>
+        <li onClick={handleOrganizations} className="active_organizations">
+          Organizacjom pozrządowym
+        </li>
+        <li onClick={handleCollections} className="active_collections">
+          Lokalnym zbiórkom
+        </li>
       </ul>
       <div className="helpWho__content">
         <div className="helpWho__content__description">{description}</div>
-        <ul>{renderList}</ul>
-        <ul>{renderPageNumbers}</ul>
+        <ul>{clientList && renderList}</ul>
+        <ul>{pages.length > 0 && clientList ? renderPageNumbers : ""}</ul>
       </div>
     </section>
   );
