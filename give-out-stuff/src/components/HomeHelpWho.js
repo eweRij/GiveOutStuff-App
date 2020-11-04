@@ -8,8 +8,9 @@ const HomeHelp = () => {
   const [pages, setPages] = useState([]);
   const API = "http://localhost:8000";
 
-  const handleClick = (e, id) => {
+  const handleClick = (e) => {
     setCurrentPage(e.target.id);
+    console.log(e.target.id);
   };
 
   const indexOfLastOnPage = currentPage * perPage;
@@ -32,6 +33,20 @@ const HomeHelp = () => {
       setPages(page);
     }
   };
+
+  const renderPageNumbers = pages.map((number) => {
+    return (
+      <li
+        key={number}
+        id={number}
+        onClick={(e) => {
+          handleClick(e);
+        }}
+      >
+        {number}
+      </li>
+    );
+  });
   useEffect(() => {
     fetch(`${API}/fundacje`)
       .then((response) => response.json())
@@ -55,7 +70,7 @@ const HomeHelp = () => {
       <div className="helpWho__content">
         <div className="helpWho__content__description">{description}</div>
         <ul>{renderList}</ul>
-        <ul>{pages}</ul>
+        <ul>{renderPageNumbers}</ul>
       </div>
     </section>
   );
