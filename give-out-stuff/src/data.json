@@ -1,7 +1,6 @@
 {
     "fundacje": [
-      { "page": 1,
-        "list": [{
+        {
             "name": "Fundacja Lorem Ipsum 1 ",
             "items": "Egestas, sed, tempus"
         },{
@@ -10,9 +9,9 @@
         },{
             "name": "Fundacja Lorem Ipsum 3",
             "items": "Egestas, sed, tempus"
-        }] 
-      },{ "page": 2,
-        "list": [{
+        
+      },
+      {
             "name": "Fundacja Lorem Ipsum 4 ",
             "items": "Egestas, sed, tempus"
         },{
@@ -21,9 +20,8 @@
         },{
             "name": "Fundacja Lorem Ipsum 6",
             "items": "Egestas, sed, tempus"
-        }] 
-      },{ "page": 3,
-        "list": [{
+        
+      },{
             "name": "Fundacja Lorem Ipsum 7 ",
             "items": "Egestas, sed, tempus"
         },{
@@ -32,12 +30,10 @@
         },{
             "name": "Fundacja Lorem Ipsum 9",
             "items": "Egestas, sed, tempus"
-        }] 
       }
     ],
     "organizacje": [
-        { "page": 1,
-            "list": [{
+       {
                 "name": "Organizacja Lorem Ipsum 1 ",
                 "items": "Egestas, sed, tempus"
             },{
@@ -45,10 +41,8 @@
                 "items": "Egestas, sed, tempus"
             },{
                 "name": "Organizacja Lorem Ipsum 3",
-                "items": "Egestas, sed, tempus"
-            }] 
-          },{ "page": 2,
-            "list": [{
+                "items": "Egestas, sed, tempus" 
+          },{
                 "name": "Organizacja Lorem Ipsum 4 ",
                 "items": "Egestas, sed, tempus"
             },{
@@ -57,13 +51,10 @@
             },{
                 "name": "Organizacja Lorem Ipsum 6",
                 "items": "Egestas, sed, tempus"
-            }] 
           }
     ],
     "zbiorki": [
         { 
-        "page": 1,
-        "list": [{
             "name": "Zbiórka Lorem Ipsum 1 ",
             "items": "Egestas, sed, tempus"
         },{
@@ -73,5 +64,4 @@
             "name": "Zbiórka Lorem Ipsum 3",
             "items": "Egestas, sed, tempus"
         }] 
-      }]
   }
