@@ -1,0 +1,39 @@
+.navbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    &__log{
+        padding-top: 5vh;
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                margin-left: 5vw;
+                font-size: 14px;
+                color: #737373;
+                &:last-child {
+                    border: 0.75px solid #FAD648;
+                    padding: 10px 15px;
+                   
+                }
+            }
+        }
+    }
+    &__menu {
+        padding-top: 5vh;
+        ul{
+            display: flex;
+            align-items: center;
+            li{
+                color: #3C3C3C;
+                margin-left: 5vw;
+                font-size: 18px;
+            }
+        }
+        &__start {
+            border: 0.75px solid #3C3C3C;
+            padding: 10px 20px;
+        }
+    }
+}
