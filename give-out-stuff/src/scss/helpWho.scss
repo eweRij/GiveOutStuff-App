@@ -1,10 +1,12 @@
 .helpWho {
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top:5vh;
+    margin-bottom: 5vh;
     &__heading {
         text-align: center;
         font: normal normal normal 38px/55px Open Sans;
@@ -25,9 +27,73 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        margin: 5vh;
+        cursor: pointer;
         li {
             text-align: center;
             min-width:20vw;
+            font: normal normal normal 24px/24px Open Sans;
+            letter-spacing: 0px;
+            color: #3C3C3C;
+            opacity: 1;
+            padding: 20px;
         }
     }
+    &__content{
+        width: 100%;
+        &__description{
+        text-align: center;
+        font: normal normal normal 22px/30px Open Sans;
+        letter-spacing: 0px;
+        color: #3C3C3C;
+        opacity: 1;
+        }
+        &__list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            li {
+                width:80%;
+                display: flex;
+                justify-content: space-between;
+                margin:5vh;
+                align-items: center;
+                border-bottom: 1px solid #707070;
+                h1{
+                    text-align: left;
+                    font: normal normal 300 26px/31px Merriweather;
+                    letter-spacing: 0px;
+                    color: #3C3C3C;
+                    opacity: 1;
+                }
+                h2 {
+                    text-align: left;
+                    font: normal normal 300 18px/22px Merriweather;
+                    letter-spacing: 0px;
+                    color: #3C3C3C;
+                    opacity: 1;
+                }
+            }
+        }
+        &__pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            li{
+                margin:5vh;
+                border: 1px solid transparent ;
+                padding: 10px;
+
+                &:hover {
+                    border: 1px solid #707070 ;
+                }
+            }
+        }
+    }
+}
+.active {
+    border: 1px solid #707070 ;
 }
