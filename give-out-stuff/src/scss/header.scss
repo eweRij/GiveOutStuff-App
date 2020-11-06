@@ -1,5 +1,5 @@
 .header {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,7 +43,7 @@
         top: -100px;
         left: -400px;
         width: 900px;
-        height: 700px;
+        height: 750px;
         z-index: -1;
         background: transparent url('../assets/Home-Hero-Image.jpg') no-repeat center/contain;
     }

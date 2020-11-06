@@ -1,11 +1,12 @@
 .helpWho {
     width: 100%;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-top:5vh;
+    margin-bottom: 5vh;
     &__heading {
         text-align: center;
         font: normal normal normal 38px/55px Open Sans;

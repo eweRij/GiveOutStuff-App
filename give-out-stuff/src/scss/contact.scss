@@ -1,6 +1,6 @@
 .contact{
     position: relative;
-    width:100%;
+    width:100vw;
     height:100vh;
     display: flex;
     justify-content: center;
@@ -9,10 +9,10 @@
     &::after {
         content: "";
         position: absolute;
-        bottom: -500x;
+        bottom: -300x;
         left: 0px;
         width: 100vw;
-        height: 700px;
+        height: 750px;
         z-index: -1;
         background: white url('../assets/Background-Contact-Form.jpg') no-repeat center/cover;
     opacity: 0.3;
@@ -83,6 +83,7 @@
                 letter-spacing: 0px;
                 color: #3C3C3C26;
                 opacity: 1;
+                background-color: transparent;
             }
         }
     }   
@@ -102,6 +103,7 @@
         letter-spacing: 0px;
         color: #3C3C3C26;
         opacity: 1;
+        background-color: transparent;
     }
     .submit {
         align-self: flex-end;
