@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const HomeContact = () => {
-  const [user, setForm] = useState({
+  const [user, setUser] = useState({
     name: "Ewelina",
     email: "zaizaier@op.pl",
     message:
@@ -20,24 +20,42 @@ const HomeContact = () => {
   const handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    setForm((prevState) => {
+    setUser((prevState) => {
       return {
         ...prevState,
         [name]: value,
       };
     });
   };
+
   console.log(user.name, user.email, user.message);
+  console.log(newQuestion);
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (user.name.indexOf(" ") > 0 && user.name.length <= 0) {
-      setErrorName("Podane imię jest nieprawidłowe!" && user.email.length <= 0);
-    } else if (user.email.indexOf("@" < 0)) {
+    let space = " ";
+    if (user.name.indexOf(space) > 0) {
+      setErrorName("Podane imię jest nieprawidłowe!");
+    } else {
+      setErrorName("");
+    }
+    if (user.email.indexOf("@") < 0) {
       setErrorEmail("Podany email jest nieprawidłowy!");
-    } else if (user.message.length < 120) {
+    } else {
+      setErrorEmail("");
+    }
+
+    if (user.message.length < 120) {
       setErrorMessage("Twoja wiadomość powinna mieć conajmniej 120 znaków");
     } else {
-      fetch(" https://fer-api.coderslab.pl/v1/exam5/contact", {
+      setErrorMessage("");
+    }
+
+    if (
+      user.name.indexOf(space) < 0 &&
+      user.email.indexOf("@") > 0 &&
+      user.message.length >= 120
+    ) {
+      fetch(API, {
         method: "POST",
         body: JSON.stringify(newQuestion),
         headers: {
@@ -51,7 +69,15 @@ const HomeContact = () => {
         .catch((error) => {
           console.log(error);
         });
-      setConfirm("Wiadomość została wysłana!Wkrótce się z Tobą skontaktujemy!");
+      setConfirm(
+        <>
+          <h1>Wiadomość została wysłana!</h1>
+          <h1>Wkrótce się z Tobą skontaktujemy!</h1>
+        </>
+      );
+      setUser({ name: "", email: "", message: "" });
+    } else {
+      setConfirm("");
     }
   };
 
@@ -61,37 +87,43 @@ const HomeContact = () => {
       <div className="contact__info">
         <h1 className="contact__info__header">Skontaktuj się z nami</h1>
         <div className="contact__info__decor"></div>
-        <div className="contact__info__confirmation">{confirm}</div>
+        <div className="contact__info__confirmation confirm">{confirm}</div>
         <form onSubmit={handleSubmit} className="contact__info__form">
           <div className="contact__info__form__personalData">
             <div className="contact__info__form__personalData__name">
               <label>Wpisz swoje imię</label>
               <input
+                style={{ borderBottom: `${errorName && "1px solid red"}` }}
                 onChange={handleChange}
                 type="text"
                 name="name"
                 value={user.name}
               ></input>
-              <div>{errorName}</div>
+              <div className="error">{errorName}</div>
             </div>
             <div className="contact__info__form__personalData__email">
               <label>Wpisz swojego maila</label>
               <input
+                style={{ borderBottom: `${errorEmail && "1px solid red"}` }}
                 onChange={handleChange}
                 type="text"
                 name="email"
                 value={user.email}
               ></input>
-              <div>{errorEmail}</div>
+              <div className="error">{errorEmail}</div>
             </div>
           </div>
-          <label>Wpisz swoją wiadomość</label>
-          <textarea
-            onChange={handleChange}
-            name="message"
-            value={user.message}
-          ></textarea>
-          <div>{errorMessage}</div>
+          <div className="contact__info__form__textarea">
+            <label>Wpisz swoją wiadomość</label>
+            <textarea
+              style={{ borderBottom: `${errorMessage && "1px solid red"}` }}
+              onChange={handleChange}
+              name="message"
+              value={user.message}
+            ></textarea>
+            <div className="textareaError">{errorMessage}</div>
+          </div>
+
           <input className="submit" type="submit" value="Wyślij"></input>
         </form>
       </div>
