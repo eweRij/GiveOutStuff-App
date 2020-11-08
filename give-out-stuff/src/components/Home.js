@@ -6,7 +6,6 @@ import HomeAboutUs from "./HomeAboutUs";
 import HomeHelpWho from "./HomeHelpWho";
 import HomeContact from "./HomeContact";
 import Footer from "./Footer";
-// import Navigation from "./Navigation";
 import { Element } from "react-scroll";
 
 const Home = () => {
