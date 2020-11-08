@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import MenuToScroll from "./MenuToScroll";
 const Navigation = () => {
   return (
-    <div className="navbar">
+    <div className="navbar container">
       <div className="navbar__log">
         <ul>
           <li>

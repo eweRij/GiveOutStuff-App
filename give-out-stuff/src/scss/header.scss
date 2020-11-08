@@ -1,5 +1,5 @@
 .header {
-    width: 100vw;
+    max-width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,7 @@
             align-items: center;
             li{
                 width:150px;
-                border: 0.75px solid #3C3C3C;
+                border: 0.75px solid $font-color;
                 padding: 10px 15px;
                 margin:10px;
 

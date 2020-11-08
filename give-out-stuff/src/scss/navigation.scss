@@ -26,13 +26,13 @@
             display: flex;
             align-items: center;
             li{
-                color: #3C3C3C;
+                color: $font-color;
                 margin-left: 5vw;
                 font-size: 18px;
             }
         }
         &__start {
-            border: 0.75px solid #3C3C3C;
+            border: 0.75px solid $font-color;
             padding: 10px 20px;
         }
     }

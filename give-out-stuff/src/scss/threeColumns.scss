@@ -1,9 +1,9 @@
 
 .numbers {
-    color: #3C3C3C;
+    color: $font-color;
     display: flex;
-    width: 95vw;
-    padding: 8vh;
+    width: 100vw;
+    
     background: transparent url('../assets/3 Columns Background.png') 0% 0% no-repeat padding-box;
     div{
         display: flex;
@@ -11,20 +11,21 @@
         align-items: center;
         text-align: center;
         color: #5E5322;
+        margin:20px 10px;
         h1 {
             font-size: 70px;
             margin-bottom: 5vh;
             letter-spacing: -0.36px;
         }
         h2{
-            margin-bottom: 5vh;
-            font: normal normal normal 18px/30px Open Sans;
+            margin-bottom: 1vh;
+            font: normal normal normal 18px/30px $font-base;
             letter-spacing: -0.32px;
             opacity: 1;
       
         }
         div {
-            font: normal normal 300 14px Merriweather;
+            font: normal normal 300 14px $font-alt;
             letter-spacing: -0.32px;
             line-height: 1.5;
             opacity: 1;
