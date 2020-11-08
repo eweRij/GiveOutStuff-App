@@ -7,7 +7,7 @@ import HomeHelpWho from "./HomeHelpWho";
 import HomeContact from "./HomeContact";
 import Footer from "./Footer";
 // import Navigation from "./Navigation";
-import { Element, animateScroll as scroll } from "react-scroll";
+import { Element } from "react-scroll";
 
 const Home = () => {
   return (

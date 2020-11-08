@@ -6,7 +6,7 @@
     justify-content: center;
     width: 100vw;
     &__header {
-        font: normal normal normal 32px/55px Open Sans;
+        font: normal normal normal 32px/55px $font-base;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -20,7 +20,7 @@
     }
     &__content {
         background-color: #F0F1F1;
-        width: 100%;
+        width: 100vw;
         ul {
            
             display: flex;
@@ -35,7 +35,7 @@
                     width:70px;
                     border-bottom: 1px solid #707070;
                     margin-bottom: 1vh;
-                    margin-top: 1vh;
+                    border-top: none;
 
                 }
         }
@@ -48,27 +48,27 @@
     }
     &__title {
         padding-top: 3vh;
-        font: normal normal normal 16px/24px Open Sans;
+        font: normal normal normal 16px/24px $font-base;
         opacity: 1;
-        color: #3C3C3C;
+        color: $font-color;
         text-align: center;
     }
     &__explanation {
-        color: #3C3C3C;
+        color: $font-color;
         text-align: center;
-        font: normal normal normal 14px/10px Open Sans;
+        font: normal normal normal 14px/10px $font-base;
         line-height: 1.5;
     }
 }
 &__give-out-navigation {
     width:150px;
-    border: 0.75px solid #3C3C3C;
+    border: 0.75px solid $font-color;
     padding: 10px 15px;
     margin-top:5vh;
     margin-bottom: 5vh;
     text-align: center;
     font-size: 28px;
-    color:#3C3C3C;
+    color:$font-color;
 }
 }
 
@@ -76,7 +76,7 @@
     background: transparent url('../assets/Icon-1.svg') no-repeat center/contain;
 }
 .secondStep {
-    background: transparent url('../assets/Icon-2.svg') no-repeat center/cover;
+    background: transparent url('../assets/Icon-2.svg') no-repeat center/contain;
 }
 .thirdStep {
     background: transparent url('../assets/Icon-3.svg') no-repeat center/contain;
