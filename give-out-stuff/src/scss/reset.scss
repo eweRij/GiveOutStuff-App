@@ -12,3 +12,11 @@ body {
 .app {
     max-width: 100vw;
 }
+.error {
+    font: normal normal 600 14px/32px $font-base;
+    color:red;
+    width: 280px;
+    position: absolute;
+    top:105%;
+    right:-32%;
+}

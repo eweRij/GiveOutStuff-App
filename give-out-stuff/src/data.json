@@ -2,66 +2,66 @@
     "fundacje": [
         {
             "name": "Fundacja Lorem Ipsum 1 ",
-            "items": "Egestas, sed, tempus"
+            "items": "1Egestas, sed, tempus"
         },{
             "name": "Fundacja Lorem Ipsum 2",
-            "items": "Egestas, sed, tempus"
+            "items": "2 Egestas, sed, tempus"
         },{
             "name": "Fundacja Lorem Ipsum 3",
-            "items": "Egestas, sed, tempus"
+            "items": "3 Egestas, sed, tempus"
         
       },
       {
             "name": "Fundacja Lorem Ipsum 4 ",
-            "items": "Egestas, sed, tempus"
+            "items": "4 Egestas, sed, tempus"
         },{
             "name": "Fundacja Lorem Ipsum 5",
-            "items": "Egestas, sed, tempus"
+            "items": "5 Egestas, sed, tempus"
         },{
             "name": "Fundacja Lorem Ipsum 6",
-            "items": "Egestas, sed, tempus"
+            "items": "6 Egestas, sed, tempus"
         
       },{
             "name": "Fundacja Lorem Ipsum 7 ",
-            "items": "Egestas, sed, tempus"
+            "items": "7 Egestas, sed, tempus"
         },{
             "name": "Fundacja Lorem Ipsum 8",
-            "items": "Egestas, sed, tempus"
+            "items": "8 Egestas, sed, tempus"
         },{
             "name": "Fundacja Lorem Ipsum 9",
-            "items": "Egestas, sed, tempus"
+            "items": "9 Egestas, sed, tempus"
       }
     ],
     "organizacje": [
        {
                 "name": "Organizacja Lorem Ipsum 1 ",
-                "items": "Egestas, sed, tempus"
+                "items": "1 Egestas, sed, tempus"
             },{
                 "name": "Organizacja Lorem Ipsum 2",
-                "items": "Egestas, sed, tempus"
+                "items": "2 Egestas, sed, tempus"
             },{
                 "name": "Organizacja Lorem Ipsum 3",
-                "items": "Egestas, sed, tempus" 
+                "items": "3 Egestas, sed, tempus" 
           },{
                 "name": "Organizacja Lorem Ipsum 4 ",
-                "items": "Egestas, sed, tempus"
+                "items": "4 Egestas, sed, tempus"
             },{
                 "name": "Organizacja Lorem Ipsum 5",
-                "items": "Egestas, sed, tempus"
+                "items": "5 Egestas, sed, tempus"
             },{
                 "name": "Organizacja Lorem Ipsum 6",
-                "items": "Egestas, sed, tempus"
+                "items": "6 Egestas, sed, tempus"
           }
     ],
     "zbiorki": [
         { 
             "name": "Zbiórka Lorem Ipsum 1 ",
-            "items": "Egestas, sed, tempus"
+            "items": "1 Egestas, sed, tempus"
         },{
             "name": "Zbiórka Lorem Ipsum 2",
-            "items": "Egestas, sed, tempus"
+            "items": "2 Egestas, sed, tempus"
         },{
             "name": "Zbiórka Lorem Ipsum 3",
-            "items": "Egestas, sed, tempus"
+            "items": "3 Egestas, sed, tempus"
         }] 
   }
