@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import Home from "./components/Home";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Log from "./components/Log";
+import Logout from "./components/Logout";
 import Registration from "./components/Registration";
 function App() {
   return (
@@ -11,8 +12,9 @@ function App() {
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/loggin" component={Log} />
-          <Route exact path="/register" component={Registration} />
+          <Route path="/loggin" component={Log} />
+          <Route path="/register" component={Registration} />
+          <Route path="/logout" component={Logout}></Route>
         </Switch>
       </HashRouter>
     </div>

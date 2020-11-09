@@ -1,0 +1,29 @@
+.logout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    &__header{
+        text-align: center;
+        font: normal normal normal 40px/55px $font-base;
+        letter-spacing: -0.8px;
+        color: $font-color;
+        opacity: 1;
+        margin-bottom: 5vh;
+    }
+    &__decor {
+        height: 30px;
+        width: 200px;
+        background: transparent url('../assets/Decoration.svg') no-repeat center/cover;
+        margin-bottom: 5vh;
+    }
+    &__navigation {
+        border: 0.75px solid $font-color;
+        padding: 25px;;
+        text-align: center;
+        font-size: large;
+    }
+
+    }
