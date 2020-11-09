@@ -4,7 +4,7 @@ const HomeHelpWho = () => {
   const [clientList, setClientList] = useState("");
   const [description, setDescription] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerPage] = useState(3);
+  const perPage = 3;
   const [pages, setPages] = useState([]);
 
   const [activeF, setActiveF] = useState(false);
@@ -117,7 +117,6 @@ const HomeHelpWho = () => {
       .catch((error) => {
         console.log(error);
       });
-
     setDescription("Opis dla Organizacji");
   }, []);
   return (
