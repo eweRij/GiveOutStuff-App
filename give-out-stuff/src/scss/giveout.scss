@@ -1,5 +1,6 @@
+
 .giveOut {
-    max-width: 100vw;
+    min-width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,8 +9,7 @@
     text-align: center;
     position: relative;
     &__header {
-        min-width: 50%;
-        font: normal normal 600 30px/55px Open Sans;
+        font: normal normal 600 30px/55px $font-base;
         color: #3C3C3C;
         font-size: 20px;
         margin-right: 5%;
@@ -53,8 +53,35 @@
         top: -200px;
         left: -210px;
         width: 900px;
-        height: 750px;
+        height: 800px;
         z-index: -1;
         background: transparent url('../assets/Form-Hero-Image.jpg') no-repeat center/contain;
+    }
+    &__information {
+        background-color: #FAD648;
+        padding: 20px;
+        width:100%;
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        h1 {
+        width: 100%;
+        font: normal normal 600 40px/55px $font-base;
+        color: #3C3C3C;
+        opacity:1;
+        text-align: left;
+        margin-left: 10vw;
+    }
+    &__content{
+        text-align: left;
+        width: 100%;
+        font: normal normal 600 20px/55px $font-base;
+        letter-spacing: 0px;
+        color: #3C3C3C;
+        opacity: 1;
+        margin-left: 10vw;
+    }
     }
 }
