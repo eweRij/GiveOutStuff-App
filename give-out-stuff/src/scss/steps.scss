@@ -1,0 +1,79 @@
+.steps {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background: transparent url('../assets/Background-Form.jpg') no-repeat center/cover;
+    padding-left: 30px;
+    &__page {
+        text-align: center;
+        font: normal normal 300 24px/27px $font-base;
+        letter-spacing: 0px;
+        color: $font-color;
+        opacity: 1;
+        margin-left: 5vw;
+        margin-bottom: 5vh;
+    }
+    &__header {
+        text-align: center;
+        font: normal normal 600 36px/45px $font-base;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+        margin-left: 5vw;
+        margin-bottom: 5vh;
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 5vw;
+        margin-bottom: 5vh;
+        &__radio {
+            margin-bottom: 3vh;
+            input{
+                background: transparent 0% 0% no-repeat padding-box;
+                border: 0.75px solid #3C3C3C;
+                opacity: 1;
+                width:20px;
+                height:20px;
+                &:checked {
+                    background-color: #FAD648;
+                }
+            }
+            label {
+                text-align: left;
+                font: normal normal 300 24px/32px $font-base;
+                letter-spacing: 0px;
+                color: #000000;
+                opacity: 1;
+            }
+        }
+        
+    }
+    
+}
+.giveOut__backAndForth {
+    width:100%;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5vw;
+    &__back, &__forth {
+        text-align: left;
+        font: normal normal 300 24px/32px $font-base;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+        padding: 10px 30px;
+    }
+    &__back {
+        justify-self: flex-start ;
+    }
+    &__forth {
+        justify-self: flex-end;
+    }
+}

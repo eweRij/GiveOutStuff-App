@@ -47,18 +47,24 @@ const GiveOut = () => {
           <h1 className="giveOut__information__header">Ważne!</h1>
           <div className="giveOut__information__content">{info}</div>
         </div>
-        {step}
-        <div className="giveOut__backAndForth">
-          <button style={{ display: `${counter > 1 ? "block" : "none"}` }}>
-            {counter > 1 ? "Wstecz" : ""}
-          </button>
-          <button
-            style={{
-              display: `${counter < 4 && counter >= 1 ? "block" : "none"}`,
-            }}
-          >
-            {counter < 4 && counter >= 1 ? "Dalej" : ""}
-          </button>
+        <div className="steps">
+          {step}
+          <div className="giveOut__backAndForth">
+            <button
+              className="giveOut__backAndForth__back"
+              style={{ display: `${counter > 1 ? "block" : "none"}` }}
+            >
+              {counter > 1 ? "Wstecz" : ""}
+            </button>
+            <button
+              className="giveOut__backAndForth__forth"
+              style={{
+                display: `${counter < 4 && counter >= 1 ? "block" : "none"}`,
+              }}
+            >
+              {counter < 4 && counter >= 1 ? "Dalej" : ""}
+            </button>
+          </div>
         </div>
       </section>
       <HomeContact />
