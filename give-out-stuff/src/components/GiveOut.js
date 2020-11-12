@@ -1,8 +1,13 @@
-import React from "react";
-
+import React, { useState } from "react";
 import HomeContact from "./HomeContact";
 import Footer from "./Footer";
+import Step1 from "./Step1";
 const GiveOut = () => {
+  const [counter, setCounter] = useState(1);
+  const [step, setStep] = useState(<Step1 />);
+  const [info, setInfo] = useState(
+    "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać."
+  );
   return (
     <>
       <section className="giveOut">
@@ -40,10 +45,20 @@ const GiveOut = () => {
         </div>
         <div className="giveOut__information">
           <h1 className="giveOut__information__header">Ważne!</h1>
-          <div className="giveOut__information__content">
-            Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-            wiedzieć komu najlepiej je przekazać.
-          </div>
+          <div className="giveOut__information__content">{info}</div>
+        </div>
+        {step}
+        <div className="giveOut__backAndForth">
+          <button style={{ display: `${counter > 1 ? "block" : "none"}` }}>
+            {counter > 1 ? "Wstecz" : ""}
+          </button>
+          <button
+            style={{
+              display: `${counter < 4 && counter >= 1 ? "block" : "none"}`,
+            }}
+          >
+            {counter < 4 && counter >= 1 ? "Dalej" : ""}
+          </button>
         </div>
       </section>
       <HomeContact />
