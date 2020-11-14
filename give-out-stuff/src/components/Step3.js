@@ -5,10 +5,20 @@ const Step3 = () => {
 
   const handleClick = (e) => {
     // setChecked((prev) => !prev);
-    let color = e.target.style.backgroundColor;
-    e.target.style.backgroundColor = `${
-      color === "transparent" ? "#FAD648" : "transparent"
-    }`; //inaczej napisac ta funkcje!
+    console.log(e.target.style.backgroundColor);
+    // e.target.style.backgroundColor = "pink";
+    // e.target.style.backgroundColor = `${
+    //   color === "transparent" ? "#FAD648" : "transparent"
+    // }`;
+    // console.log(color);
+    if (e.target.style.backgroundColor === "transparent") {
+      e.target.style.backgroundColor = "#FAD648";
+    } else {
+      e.target.style.backgroundColor = "transparent";
+    }
+    // if (e.target.style.backgroundColor === "#FAD648") {
+    //   e.target.style.backgroundColor = "transparent";
+    // }
   };
   return (
     <>
@@ -25,13 +35,18 @@ const Step3 = () => {
             <option value="katowice">Katowice</option>
           </select>
         </div>
-        <label className="steps__header">Komu chcesz pomóc?</label>
+        <label
+          className="steps__header"
+          style={{ marginLeft: "0", fontSize: "24px" }}
+        >
+          Komu chcesz pomóc?
+        </label>
         <div className="steps__form__checkbox">
           <input
             style={{
-              width: "120px",
+              width: "150px",
               height: "40px",
-              //   backgroundColor: `${checked ? "#FAD648" : "transparent"}`,
+              backgroundColor: "transparent",
             }}
             onClick={handleClick}
             type="button"
@@ -40,8 +55,9 @@ const Step3 = () => {
           ></input>
           <input
             style={{
-              width: "120px",
+              width: "150px",
               height: "40px",
+              backgroundColor: "transparent",
             }}
             onClick={handleClick}
             type="button"
@@ -50,8 +66,9 @@ const Step3 = () => {
           ></input>
           <input
             style={{
-              width: "120px",
+              width: "250px",
               height: "40px",
+              backgroundColor: "transparent",
             }}
             onClick={handleClick}
             type="button"
@@ -60,8 +77,9 @@ const Step3 = () => {
           ></input>
           <input
             style={{
-              width: "120px",
+              width: "220px",
               height: "40px",
+              backgroundColor: "transparent",
             }}
             onClick={handleClick}
             type="button"
@@ -70,8 +88,9 @@ const Step3 = () => {
           ></input>
           <input
             style={{
-              width: "120px",
+              width: "280px",
               height: "40px",
+              backgroundColor: "transparent",
             }}
             onClick={handleClick}
             type="button"
@@ -79,7 +98,10 @@ const Step3 = () => {
             value="osobom starszym"
           ></input>
         </div>
-        <label className="steps__header">
+        <label
+          className="steps__header"
+          style={{ marginLeft: "0", fontSize: "24px" }}
+        >
           Wpisz nazwę konkretnej organizacji (opcjonalnie)
         </label>
         <input
