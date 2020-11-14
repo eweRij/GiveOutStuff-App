@@ -7,27 +7,14 @@ import Step3 from "./Step3";
 
 const GiveOut = () => {
   const [counter, setCounter] = useState(1);
-  const [step, setStep] = useState(<Step1 />);
-  const [info, setInfo] = useState(
-    "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać."
-  );
 
   const handleForth = () => {
     setCounter((prev) => prev + 1);
-    if (counter === 2) {
-      setStep(<Step2 />);
-    }
-    setInfo(
-      "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ."
-    );
-    if (counter === 3) {
-      setStep(<Step3 />);
-      setInfo(
-        "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy."
-      );
-    }
   };
-  console.log(counter);
+  const handleBack = () => {
+    setCounter((prev) => prev - 1);
+  };
+
   return (
     <>
       <section className="giveOut">
@@ -65,13 +52,23 @@ const GiveOut = () => {
         </div>
         <div className="giveOut__information">
           <h1 className="giveOut__information__header">Ważne!</h1>
-          <div className="giveOut__information__content">{info}</div>
+          <div className="giveOut__information__content">
+            {counter === 1 &&
+              "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać."}
+            {counter === 2 &&
+              "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ."}
+            {counter === 3 &&
+              "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy."}
+          </div>
         </div>
         <div className="steps">
-          {step}
+          {counter === 1 && <Step1 />}
+          {counter === 2 && <Step2 />}
+          {counter === 3 && <Step3 />}
           <div className="giveOut__backAndForth">
             <button
               className="giveOut__backAndForth__back"
+              onClick={handleBack}
               style={{ display: `${counter > 1 ? "block" : "none"}` }}
             >
               Wstecz

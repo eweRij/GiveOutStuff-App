@@ -2,12 +2,14 @@ import React from "react";
 
 const Step2 = () => {
   return (
-    <>
-      <h2 className="steps__page">Krok 2/4</h2>
-      <h1 className="steps__header">
+    <div className="step2">
+      <h2 style={{ marginTop: "10vh" }} className="steps__page">
+        Krok 2/4
+      </h2>
+      <h1 style={{ marginTop: "10vh" }} className="steps__header">
         Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:
       </h1>
-      <form className="steps__form">
+      <form style={{ marginTop: "10vh" }} className="steps__form">
         <div className="steps__form__select">
           <label>Liczba 60l worków:</label>
           <select>
@@ -20,7 +22,7 @@ const Step2 = () => {
           </select>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 export default Step2;
