@@ -4,6 +4,8 @@ import Footer from "./Footer";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import Step4 from "./Step4";
+import Step5 from "./Step5";
 
 const GiveOut = () => {
   const [counter, setCounter] = useState(1);
@@ -50,7 +52,10 @@ const GiveOut = () => {
             </div>
           </div>
         </div>
-        <div className="giveOut__information">
+        <div
+          style={{ display: `${counter === 5 ? "none" : "block"}` }}
+          className="giveOut__information"
+        >
           <h1 className="giveOut__information__header">Ważne!</h1>
           <div className="giveOut__information__content">
             {counter === 1 &&
@@ -59,12 +64,15 @@ const GiveOut = () => {
               "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ."}
             {counter === 3 &&
               "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy."}
+            {counter === 4 && "Podaj adres oraz termin odbioru rzeczy."}
           </div>
         </div>
         <div className="steps">
           {counter === 1 && <Step1 />}
           {counter === 2 && <Step2 />}
           {counter === 3 && <Step3 />}
+          {counter === 4 && <Step4 />}
+          {counter === 5 && <Step5 />}
           <div className="giveOut__backAndForth">
             <button
               className="giveOut__backAndForth__back"
@@ -77,10 +85,10 @@ const GiveOut = () => {
               onClick={handleForth}
               className="giveOut__backAndForth__forth"
               style={{
-                display: `${counter < 4 ? "block" : "none"}`,
+                display: `${counter < 6 ? "block" : "none"}`,
               }}
             >
-              Dalej
+              {counter === 5 ? "Potwierdzam" : "Dalej"}
             </button>
           </div>
         </div>

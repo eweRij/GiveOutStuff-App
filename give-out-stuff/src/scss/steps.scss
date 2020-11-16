@@ -1,6 +1,6 @@
 .steps {
     width: 100%;
-    height: 120vh;
+    // height: vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -32,6 +32,40 @@
         justify-content: center;
         margin-left: 5vw;
         margin-bottom: 5vh;
+        &__4step {
+            margin-left: 5vw;;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            &__address, &__collection{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                width: 25vw;
+                margin-right: 2vw;
+                &__container {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-bottom: 5vh;
+                }
+            }
+            input {
+                background-color : transparent;
+                outline: none;
+                border: 0.75px solid #3C3C3C;
+                padding: 5px 10px;
+            }
+            textarea {
+                background-color : transparent;
+                outline: none;
+                border: 0.75px solid #3C3C3C;
+                width :55%;
+                height: 100px;
+            }
+        }
         &__radio, &__select, &__checkbox {
             margin-bottom: 3vh;
             display: flex;
@@ -105,7 +139,7 @@
         color: #000000;
         opacity: 1;
         padding: 15px 40px;
-        width: 150px;
+        min-width: 150px;
         text-align: center;
         cursor: pointer;
         margin-bottom: 10vh;
@@ -131,4 +165,41 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+.steps__summary {
+    margin-left: 5vw;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 5vh;
+    h2 {
+        font: normal normal 600 24px/45px $font-base;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+    }
+    &__what {
+        span {
+            font: normal normal normal 24px/45px Open Sans;
+            letter-spacing: 0px;
+            color: #000000;
+            opacity: 1;
+        }
+    }
+    &__when-where {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+        font: normal normal 300 24px/32px Open Sans;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+        &__where {
+            margin-right: 5vw;
+        }
+
+    }
 }
