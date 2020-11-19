@@ -9,10 +9,10 @@
     &::after {
         content: "";
         position: absolute;
-        bottom: -150px;
-        left: -15px;
+        bottom: -200px;
+        left: 0px;
         width: 100vw;
-        height: 750px;
+        height: 850px;
         z-index: -1;
         background: white url('../assets/Background-Contact-Form.jpg') no-repeat center/cover;
         opacity: 0.3;

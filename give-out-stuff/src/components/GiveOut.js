@@ -6,6 +6,7 @@ import Step2 from "./Step2";
 import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Step5 from "./Step5";
+import Thanks from "./Thanks";
 
 const GiveOut = () => {
   const [counter, setCounter] = useState(1);
@@ -53,7 +54,7 @@ const GiveOut = () => {
           </div>
         </div>
         <div
-          style={{ display: `${counter === 5 ? "none" : "block"}` }}
+          style={{ display: `${counter > 4 ? "none" : "block"}` }}
           className="giveOut__information"
         >
           <h1 className="giveOut__information__header">Ważne!</h1>
@@ -73,11 +74,14 @@ const GiveOut = () => {
           {counter === 3 && <Step3 />}
           {counter === 4 && <Step4 />}
           {counter === 5 && <Step5 />}
+          {counter === 6 && <Thanks />}
           <div className="giveOut__backAndForth">
             <button
               className="giveOut__backAndForth__back"
               onClick={handleBack}
-              style={{ display: `${counter > 1 ? "block" : "none"}` }}
+              style={{
+                display: `${counter > 1 && counter < 6 ? "block" : "none"}`,
+              }}
             >
               Wstecz
             </button>
