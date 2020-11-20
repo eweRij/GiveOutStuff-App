@@ -17,11 +17,11 @@ const Step4 = () => {
             <input type="text" name="city" value=""></input>
           </div>
           <div className="steps__form__4step__address__container">
-            <label>Kod pocztowy</label>
+            <label style={{ textAlign: "left" }}>Kod pocztowy</label>
             <input type="text" name="post_code" value=""></input>
           </div>
           <div className="steps__form__4step__address__container">
-            <label>Numer telefonu</label>
+            <label style={{ textAlign: "left" }}>Numer telefonu</label>
             <input type="text" name="number" value=""></input>
           </div>
         </div>
@@ -38,7 +38,7 @@ const Step4 = () => {
             style={{ alignItems: "flex-start" }}
             className="steps__form__4step__collection__container"
           >
-            <label>
+            <label style={{ textAlign: "left" }}>
               Uwagi <br></br> dla kuriera
             </label>
             <textarea name="street" value=""></textarea>
