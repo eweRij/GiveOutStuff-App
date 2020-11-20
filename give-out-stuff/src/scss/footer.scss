@@ -1,12 +1,12 @@
 .footer {
  margin-top: 3vh;
  padding-bottom: 1vh;
-//  height: 20vh;
+ height: 20vh;
  width:100vw;
  display: flex;
  justify-content: space-between;
  align-items: center;
-//  margin-top: 5vh;
+    padding-top: 5vh;
  &__copywright {
      flex-grow: 2;
      text-align: right;
