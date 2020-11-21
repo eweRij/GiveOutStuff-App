@@ -1,24 +1,35 @@
 import React, { useState } from "react";
 
 const Step3 = () => {
-  //   const [checked, setChecked] = useState("transparent");
+  const [city, setCity] = useState("");
+  const handleCity = (e) => {
+    setCity(e.target.value);
+  }; //działa
+  const [purpose, setPurpose] = useState([]);
 
+  const handlePurpose = (e) => {
+    if (purpose.indexOf(e.target.value) < 0) {
+      setPurpose((prev) => [...prev, e.target.value]);
+    } else {
+      setPurpose((prev) =>
+        prev.filter((element) => {
+          return element !== e.target.value;
+        })
+      );
+    }
+  };
+
+  const [organization, setOrganization] = useState("");
+  const handleOrganization = (e) => {
+    setOrganization(e.target.value);
+  };
   const handleClick = (e) => {
-    // setChecked((prev) => !prev);
     console.log(e.target.style.backgroundColor);
-    // e.target.style.backgroundColor = "pink";
-    // e.target.style.backgroundColor = `${
-    //   color === "transparent" ? "#FAD648" : "transparent"
-    // }`;
-    // console.log(color);
     if (e.target.style.backgroundColor === "transparent") {
       e.target.style.backgroundColor = "#FAD648";
     } else {
       e.target.style.backgroundColor = "transparent";
     }
-    // if (e.target.style.backgroundColor === "#FAD648") {
-    //   e.target.style.backgroundColor = "transparent";
-    // }
   };
   return (
     <>
@@ -26,7 +37,7 @@ const Step3 = () => {
       <h1 className="steps__header">Lokalizacja:</h1>
       <form className="steps__form">
         <div className="steps__form__select">
-          <select>
+          <select onChange={handleCity} value={city}>
             <option value="">— wybierz —</option>
             <option value="poznań">Poznań</option>
             <option value="warszawa">Warszawa</option>
@@ -43,6 +54,7 @@ const Step3 = () => {
         </label>
         <div className="steps__form__checkbox">
           <input
+            onChange={handlePurpose}
             style={{
               width: "150px",
               height: "40px",
@@ -54,6 +66,7 @@ const Step3 = () => {
             value="dzieciom"
           ></input>
           <input
+            onChange={handlePurpose}
             style={{
               width: "150px",
               height: "40px",
@@ -65,6 +78,7 @@ const Step3 = () => {
             value="bezdomnym"
           ></input>
           <input
+            onChange={handlePurpose}
             style={{
               width: "250px",
               height: "40px",
@@ -76,6 +90,7 @@ const Step3 = () => {
             value="samotnym matkom"
           ></input>
           <input
+            onChange={handlePurpose}
             style={{
               width: "220px",
               height: "40px",
@@ -87,6 +102,7 @@ const Step3 = () => {
             value="niepełnosprawnym"
           ></input>
           <input
+            onChange={handlePurpose}
             style={{
               width: "280px",
               height: "40px",
@@ -105,10 +121,11 @@ const Step3 = () => {
           Wpisz nazwę konkretnej organizacji (opcjonalnie)
         </label>
         <input
+          onChange={handleOrganization}
           className="organization"
           type="text"
           name="organization"
-          value=""
+          value={organization}
         ></input>
       </form>
     </>

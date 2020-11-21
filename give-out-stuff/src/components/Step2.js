@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Step2 = () => {
+  const [bags, setBags] = useState(0);
+  const handleBags = (e) => {
+    setBags(e.target.value);
+  }; //działa
+  console.log(bags);
   return (
     <div className="step2">
       <h2 style={{ marginTop: "10vh" }} className="steps__page">
@@ -12,7 +17,7 @@ const Step2 = () => {
       <form style={{ marginTop: "10vh" }} className="steps__form">
         <div className="steps__form__select">
           <label>Liczba 60l worków:</label>
-          <select>
+          <select value={bags} onChange={handleBags}>
             <option value="">— wybierz —</option>
             <option value="1">1</option>
             <option value="2">2</option>
