@@ -181,11 +181,30 @@
         opacity: 1;
     }
     &__what {
-        span {
-            font: normal normal normal 24px/45px Open Sans;
-            letter-spacing: 0px;
-            color: #000000;
-            opacity: 1;
+        width: 160%;
+        font: normal normal 300 20px Open Sans;
+        letter-spacing: 0px;
+        color: #000000;
+        opacity: 1;
+        h2 {
+            text-align: left;
+        }
+        div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: left;
+        }
+        &__img {
+            width:80px;
+            height: 80px; 
+            margin-right: 20px;
+        }
+        .clothes {
+            background: transparent url("../assets/Icon-1.svg") no-repeat right/contain;
+        }
+        .localization {
+            background: transparent url("../assets/Icon-4.svg") no-repeat center/contain;
         }
     }
     &__when-where {
@@ -193,7 +212,7 @@
         justify-content: space-between;
         align-items: center;
         text-align: left;
-        font: normal normal 300 24px/32px Open Sans;
+        font: normal normal 300 24px Open Sans;
         letter-spacing: 0px;
         color: #000000;
         opacity: 1;

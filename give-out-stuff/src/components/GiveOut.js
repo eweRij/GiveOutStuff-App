@@ -17,6 +17,77 @@ const GiveOut = () => {
   const handleBack = () => {
     setCounter((prev) => prev - 1);
   };
+  //co dajemy
+  const [what, setWhat] = useState([]);
+  const handleWhat = (e) => {
+    if (what.indexOf(e.target.value) < 0) {
+      setWhat((prev) => [...prev, e.target.value]);
+    } else {
+      setWhat((prev) =>
+        prev.filter((element) => {
+          return element !== e.target.value;
+        })
+      );
+    }
+  };
+  //ile worków
+  const [bags, setBags] = useState(0);
+  const handleBags = (e) => {
+    setBags(e.target.value);
+  };
+  //jakie miasto
+  const [city, setCity] = useState("");
+  const handleCity = (e) => {
+    setCity(e.target.value);
+  };
+  //dla kogo
+  const [purpose, setPurpose] = useState([]);
+  const handlePurpose = (e) => {
+    if (purpose.indexOf(e.target.value) < 0) {
+      setPurpose((prev) => [...prev, e.target.value]);
+    } else {
+      setPurpose((prev) =>
+        prev.filter((element) => {
+          return element !== e.target.value;
+        })
+      );
+    }
+    console.log(purpose);
+    if (e.target.style.backgroundColor === "transparent") {
+      e.target.style.backgroundColor = "#FAD648";
+    } else {
+      e.target.style.backgroundColor = "transparent";
+    }
+  };
+  //jaka organizacja
+  const [organization, setOrganization] = useState("");
+  const handleOrganization = (e) => {
+    setOrganization(e.target.value);
+  };
+  //dane adresowe
+  const [user, setUser] = useState({
+    street: "",
+    city: "",
+    post_code: "",
+    number: "",
+    date: "",
+    hour: "",
+  });
+  const handleUser = (e) => {
+    const { name, value } = e.target;
+    setUser((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  };
+
+  //dodatkowe info dla kuriera
+  const [additional, setAdditional] = useState("");
+  const handleAdditional = (e) => {
+    setAdditional(e.target.value);
+  };
 
   return (
     <>
@@ -69,11 +140,29 @@ const GiveOut = () => {
           </div>
         </div>
         <div className="steps">
-          {counter === 1 && <Step1 />}
-          {counter === 2 && <Step2 />}
-          {counter === 3 && <Step3 />}
-          {counter === 4 && <Step4 />}
-          {counter === 5 && <Step5 />}
+          {counter === 1 && <Step1 giveWhat={handleWhat} />}
+          {counter === 2 && <Step2 giveBags={handleBags} />}
+          {counter === 3 && (
+            <Step3
+              giveCity={handleCity}
+              givePurpose={handlePurpose}
+              giveOrganization={handleOrganization}
+            />
+          )}
+          {counter === 4 && (
+            <Step4 giveUser={handleUser} giveAdditional={handleAdditional} />
+          )}
+          {counter === 5 && (
+            <Step5
+              what={what}
+              bags={bags}
+              city={city}
+              purpose={purpose}
+              organization={organization}
+              user={user}
+              additional={additional}
+            />
+          )}
           {counter === 6 && <Thanks />}
           <div className="giveOut__backAndForth">
             <button
