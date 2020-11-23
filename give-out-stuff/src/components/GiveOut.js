@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useReducer, useState } from "react";
 import HomeContact from "./HomeContact";
 import Footer from "./Footer";
 import Step1 from "./Step1";
@@ -87,6 +87,45 @@ const GiveOut = () => {
   const [additional, setAdditional] = useState("");
   const handleAdditional = (e) => {
     setAdditional(e.target.value);
+  };
+
+  //kwestie servera
+  const API = "http://localhost:9000/user";
+
+  const data = {
+    rzeczy: what,
+    worki: bags,
+    gdzie: city,
+    komu: purpose,
+    fundacja: organization,
+    adres: {
+      ulica: user.street,
+      miasto: user.city,
+      kod: user.post_code,
+      numer: user.number,
+      data: user.date,
+      godzina: user.hour,
+    },
+    dodatkowe: additional,
+  };
+  console.log(data);
+  const handleApprove = () => {
+    setCounter((prev) => prev + 1);
+
+    fetch(`${API}`, {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data, "");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -178,10 +217,19 @@ const GiveOut = () => {
               onClick={handleForth}
               className="giveOut__backAndForth__forth"
               style={{
-                display: `${counter < 6 ? "block" : "none"}`,
+                display: `${counter < 5 ? "block" : "none"}`,
               }}
             >
-              {counter === 5 ? "Potwierdzam" : "Dalej"}
+              Dalej
+            </button>
+            <button
+              onClick={handleApprove}
+              className="giveOut__backAndForth__forth"
+              style={{
+                display: `${counter === 5 ? "block" : "none"}`,
+              }}
+            >
+              Potwierdzam
             </button>
           </div>
         </div>

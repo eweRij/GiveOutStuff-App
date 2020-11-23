@@ -1,0 +1,67 @@
+{
+  "user": [
+    {
+      "rzeczy": [
+        "ubrania, które nadają się do ponownego użycia"
+      ],
+      "worki": "4",
+      "gdzie": "",
+      "komu": [
+        "samotnym matkom"
+      ],
+      "fundacja": "doz dundacja",
+      "adres": {
+        "ulica": "SPACEROWA",
+        "miasto": "RYMANÓW ZDRÓJ",
+        "kod": "38-481",
+        "numer": "1121442",
+        "data": "eee",
+        "godzina": "4746"
+      },
+      "dodatkowe": "gtggtgtgt",
+      "id": 1
+    },
+    {
+      "rzeczy": [
+        "inne"
+      ],
+      "worki": "2",
+      "gdzie": "",
+      "komu": [
+        "dzieciom"
+      ],
+      "fundacja": "doz",
+      "adres": {
+        "ulica": "SPACEROWA",
+        "miasto": "RYMANÓW ZDRÓJ",
+        "kod": "38-481",
+        "numer": "66",
+        "data": "eee",
+        "godzina": "4636"
+      },
+      "dodatkowe": "tttt",
+      "id": 2
+    },
+    {
+      "rzeczy": [
+        "inne"
+      ],
+      "worki": "2",
+      "gdzie": "",
+      "komu": [
+        "dzieciom"
+      ],
+      "fundacja": "doz",
+      "adres": {
+        "ulica": "SPACEROWA",
+        "miasto": "RYMANÓW ZDRÓJ",
+        "kod": "38-481",
+        "numer": "66",
+        "data": "eee",
+        "godzina": "4636"
+      },
+      "dodatkowe": "tttt",
+      "id": 3
+    }
+  ]
+}
