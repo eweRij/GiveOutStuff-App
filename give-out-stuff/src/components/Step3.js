@@ -25,7 +25,6 @@ const Step3 = ({ giveCity, givePurpose, giveOrganization }) => {
           </label>
           <div className="steps__form__checkbox">
             <input
-              // onChange={givePurpose}
               style={{
                 width: "150px",
                 height: "40px",
@@ -37,7 +36,6 @@ const Step3 = ({ giveCity, givePurpose, giveOrganization }) => {
               value="dzieciom"
             ></input>
             <input
-              // onChange={givePurpose}
               style={{
                 width: "150px",
                 height: "40px",
@@ -49,7 +47,6 @@ const Step3 = ({ giveCity, givePurpose, giveOrganization }) => {
               value="bezdomnym"
             ></input>
             <input
-              // onChange={givePurpose}
               style={{
                 width: "250px",
                 height: "40px",
@@ -61,7 +58,6 @@ const Step3 = ({ giveCity, givePurpose, giveOrganization }) => {
               value="samotnym matkom"
             ></input>
             <input
-              // onChange={givePurpose}
               style={{
                 width: "220px",
                 height: "40px",
@@ -73,7 +69,6 @@ const Step3 = ({ giveCity, givePurpose, giveOrganization }) => {
               value="niepełnosprawnym"
             ></input>
             <input
-              // onChange={givePurpose}
               style={{
                 width: "280px",
                 height: "40px",
