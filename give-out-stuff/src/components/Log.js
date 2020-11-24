@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
 
 const Log = () => {
   const [log, setLog] = useState({
@@ -30,8 +31,20 @@ const Log = () => {
     if (log.email.indexOf("@") < 0) {
       setEmailError("Podany email jest nieprawidłowy!");
       console.log(emailError);
-    } else if (log.email.indexOf("@") > 0) {
+    } else if (log.email.indexOf("@") > 0 && log.password.length > 6) {
       setEmailError("");
+      auth
+        .signInWithEmailAndPassword(log.email, log.password) //logowanie z firebase
+        .then((user) => {
+          console.log(user);
+        })
+        .catch((error) => {
+          let errorCode = error.code;
+          console.log(errorCode);
+          let errorMessage = error.message;
+          console.log(errorMessage);
+          alert(errorMessage);
+        });
     }
   };
   return (
