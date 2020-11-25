@@ -2,12 +2,11 @@ import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
 import { UserContext } from "../UserProvider";
+import GiveOut from "./GiveOut";
 
 const Log = () => {
   const user = useContext(UserContext);
-  if (user) {
-    console.log(user.email);
-  }
+
   const [log, setLog] = useState({
     email: "",
     password: "",
@@ -52,54 +51,60 @@ const Log = () => {
         });
     }
   };
-  return (
-    <section className="loggin">
-      <h1 className="loggin__header">Zaloguj się</h1>
-      <div className="loggin__decor"></div>
-      <form onSubmit={handleSubmit} className="loggin__form">
-        <div className="loggin__form__container">
-          <div className="loggin__form__container__login">
-            <label>Login</label>
-            <input
-              onChange={handleChange}
-              type="text"
-              name="email"
-              value={log.email}
-              style={{ borderBottom: `${emailError && "1px solid red"}` }}
-            ></input>
-            <div
-              className="error"
-              style={{ textAlign: "center", width: "100%", right: "22%" }}
-            >
-              {emailError}
+
+  if (user) {
+    console.log(user.email);
+    return <GiveOut />;
+  } else {
+    return (
+      <section className="loggin">
+        <h1 className="loggin__header">Zaloguj się</h1>
+        <div className="loggin__decor"></div>
+        <form onSubmit={handleSubmit} className="loggin__form">
+          <div className="loggin__form__container">
+            <div className="loggin__form__container__login">
+              <label>Login</label>
+              <input
+                onChange={handleChange}
+                type="text"
+                name="email"
+                value={log.email}
+                style={{ borderBottom: `${emailError && "1px solid red"}` }}
+              ></input>
+              <div
+                className="error"
+                style={{ textAlign: "center", width: "100%", right: "22%" }}
+              >
+                {emailError}
+              </div>
+            </div>
+            <div className="loggin__form__container__password">
+              <label>Hasło</label>
+              <input
+                onChange={handleChange}
+                type="password"
+                name="password"
+                value={log.password}
+                style={{ borderBottom: `${passwordError && "1px solid red"}` }}
+              ></input>
+              <div
+                className="error"
+                style={{ textAlign: "center", width: "100%", right: "26%" }}
+              >
+                {passwordError}
+              </div>
             </div>
           </div>
-          <div className="loggin__form__container__password">
-            <label>Hasło</label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="password"
-              value={log.password}
-              style={{ borderBottom: `${passwordError && "1px solid red"}` }}
-            ></input>
-            <div
-              className="error"
-              style={{ textAlign: "center", width: "100%", right: "26%" }}
-            >
-              {passwordError}
-            </div>
+          <div className="loggin__form__links">
+            <Link className="link" to="/register">
+              Zarejestruj się
+            </Link>
+            <input type="submit" value="Zaloguj się"></input>
           </div>
-        </div>
-        <div className="loggin__form__links">
-          <Link className="link" to="/register">
-            Zarejestruj się
-          </Link>
-          <input type="submit" value="Zaloguj się"></input>
-        </div>
-      </form>
-    </section>
-  );
+        </form>
+      </section>
+    );
+  }
 };
 
 export default Log;
