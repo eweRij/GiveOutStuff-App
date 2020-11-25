@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../firebase";
+import { UserContext } from "../UserProvider";
 
 const Log = () => {
+  const user = useContext(UserContext);
+  if (user) {
+    console.log(user.email);
+  }
   const [log, setLog] = useState({
     email: "",
     password: "",
