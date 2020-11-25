@@ -25,6 +25,40 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyCc5IzhWzrw7OpbCdkFwN4-Vyc35uSen3o",
+    authDomain: "giveoutstuff-644d6.firebaseapp.com",
+    databaseURL: "https://giveoutstuff-644d6.firebaseio.com",
+    projectId: "giveoutstuff-644d6",
+    storageBucket: "giveoutstuff-644d6.appspot.com",
+    messagingSenderId: "696136453060",
+    appId: "1:696136453060:web:699864fd1884933e153291",
+    measurementId: "G-VTQP64K4YJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("user_n3xoIvObZaxG1DfOfz5nX");
+   })();
+</script>
+<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

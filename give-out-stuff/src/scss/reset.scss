@@ -9,8 +9,12 @@ body {
     margin:auto;
 }
 .link {
-    outline: none;
+    cursor: pointer;
     text-decoration: none;
+    &:active,&:focus, &:visited {
+        outline: inherit;
+        color: inherit;
+    }
 }
 .app {
     max-width:100vw ;

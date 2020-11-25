@@ -27,9 +27,24 @@ const HomeContact = () => {
       };
     });
   };
-
-  console.log(user.name, user.email, user.message);
-  console.log(newQuestion);
+  const sendFeedback = (templateId, variables) => {
+    window.emailjs
+      .send(
+        "service_p19ukoi",
+        templateId,
+        variables,
+        "user_n3xoIvObZaxG1DfOfz5nX"
+      )
+      .then((res) => {
+        alert("Wiadomość została wysłana");
+      })
+      .catch((err) =>
+        alert(
+          "Coś poszło nie tak! Spróbuj jeszcze raz lub skontaktuj się z nami",
+          err
+        )
+      );
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     let space = " ";
@@ -42,6 +57,14 @@ const HomeContact = () => {
       setErrorEmail("Podany email jest nieprawidłowy!");
     } else {
       setErrorEmail("");
+    }
+    if (user.email.indexOf("@") > 0 && user.name.indexOf(space) < 0) {
+      const templateId = "template_4yxy8fa";
+      sendFeedback(templateId, {
+        from_name: user.name,
+        reply_to: user.email,
+        message: user.message,
+      });
     }
 
     if (user.message.length < 120) {

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../firebase";
 
 const Registration = () => {
   const [log, setLog] = useState({
@@ -39,9 +40,20 @@ const Registration = () => {
       setCheckPassword("Podane hasła nie są identyczne!");
     } else if (
       log.checkPassword === log.password &&
-      log.checkPassword.length > 6
+      log.checkPassword.length > 6 &&
+      log.password.length > 6
     ) {
       setCheckPassword("");
+      auth
+        .createUserWithEmailAndPassword(log.email, log.password)
+        .then((user) => {
+          console.log(user);
+        })
+        .catch((error) => {
+          let errorCode = error.code;
+          let errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+        });
     }
   };
   return (
@@ -56,6 +68,7 @@ const Registration = () => {
               onChange={handleChange}
               type="text"
               name="email"
+              value={log.email}
               style={{ borderBottom: `${emailError && "2px solid red"}` }}
             ></input>
             <div
@@ -71,6 +84,7 @@ const Registration = () => {
               onChange={handleChange}
               type="password"
               name="password"
+              value={log.password}
               style={{ borderBottom: `${passwordError && "2px solid red"}` }}
             ></input>
             <div
@@ -89,6 +103,7 @@ const Registration = () => {
               onChange={handleChange}
               type="password"
               name="checkPassword"
+              value={log.checkPassword}
               style={{
                 borderBottom: `${checkPasswordError && "2px solid red"}`,
               }}
