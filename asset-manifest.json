@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/GiveOutStuff-App/static/css/main.719f6ff2.chunk.css",
+    "main.js": "/GiveOutStuff-App/static/js/main.bde9dc05.chunk.js",
+    "main.js.map": "/GiveOutStuff-App/static/js/main.bde9dc05.chunk.js.map",
+    "runtime-main.js": "/GiveOutStuff-App/static/js/runtime-main.88d996da.js",
+    "runtime-main.js.map": "/GiveOutStuff-App/static/js/runtime-main.88d996da.js.map",
+    "static/js/2.96b77614.chunk.js": "/GiveOutStuff-App/static/js/2.96b77614.chunk.js",
+    "static/js/2.96b77614.chunk.js.map": "/GiveOutStuff-App/static/js/2.96b77614.chunk.js.map",
+    "index.html": "/GiveOutStuff-App/index.html",
+    "static/css/main.719f6ff2.chunk.css.map": "/GiveOutStuff-App/static/css/main.719f6ff2.chunk.css.map",
+    "static/js/2.96b77614.chunk.js.LICENSE.txt": "/GiveOutStuff-App/static/js/2.96b77614.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/GiveOutStuff-App/static/media/Signature.8f2a001d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.88d996da.js",
+    "static/js/2.96b77614.chunk.js",
+    "static/css/main.719f6ff2.chunk.css",
+    "static/js/main.bde9dc05.chunk.js"
+  ]
+}
